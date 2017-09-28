@@ -25,6 +25,12 @@ sudo apt-get install libcurl4-openssl-dev
 sudo apt-get install libsqlite3-dev
 curl -fsS https://dlang.org/install.sh | bash -s dmd
 ```
+Note: If `curl -fsS https://dlang.org/install.sh | bash -s dmd` returns error, download with APT repository:
+```sh
+sudo wget http://master.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list
+wget -qO - https://dlang.org/d-keyring.gpg | sudo apt-key add -
+sudo apt-get update && sudo apt-get install dmd-bin
+```
 
 ### Dependencies: Fedora/CentOS
 ```sh
